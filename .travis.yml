@@ -1,22 +1,23 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - npm install phantomjs-prebuilt
-
+- npm config set spin false
+- npm install -g bower
+- npm install phantomjs-prebuilt
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: B1FdaqXtNaTEKIxgIayZ0oM3vD1WHRN4+/V1SBR9cvjkMIA0c92Pj2HpED6NGeQfx3Wg2DX4AU/gEVPxweG/XNAGIXvoz/Rp6udJS8HEFX6PzMvUmHS5mXDfFIEPRxuRczbNEub+wdpEe9plk5PvJSUMP3UiAwxbFvpLdGEQfNypN1GO4t0aPO5ZJz0Q5F4skAZ1S6B5c/6m0UA2CUB+BCg6FT/dC6buoFFrMwPX/PfOgTaC0FbiZVNWdeyuvd+C64NiIV0ah/6XaW1vvLFEyERioFFtiWmS0ZeyMIRaE5U2iKnUkLe0Mv+VKxkQGuJpPD3TOkddyf+etlyxLLChkYdwUBjlgoOaheuBnB2WpnHf6mjvuw9UIzOT10T+g2l1jpyQQhkZb5A6z6rPkVgMYXs1FTgs0W1d73l68YdR/yKWHwaz8pEzvorlFqWPtKxHYWyG+FG3UfKDWfyOyymuVvCQVxOZ8+/s9AR2Mgl9CtHdlIqv4qhNOuETwWE1n3VjytC4MOOujfvy/yEBsh0oVL4Yz6PbPtChWyMgvSuzeXa0yh1RtQoCtokf17CcMD2gDIPxzDfLFmzAburSu6V8jYwhU8m6NP8rq8JFkrIWsFe66EfclYqTX8SkEjxx2/luozemnD2umAx0ReHuD0PaAYGxQOIkSlAV/qeFh2dwKSA=
+  app: chatrocket-ui
+  on:
+    repo: migeorge/chatrocket-ui
