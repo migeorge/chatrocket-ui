@@ -45,7 +45,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.SD.host = 'https://chatrocket-api.herokuapp.com';
+    ENV.DS.host = 'https://chatrocket-api.herokuapp.com';
   }
 
   return ENV;
