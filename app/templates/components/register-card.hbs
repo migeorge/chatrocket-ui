@@ -1,18 +1,25 @@
 {{#x-card onsubmit=attrs.onsubmit
           title='Register for Chatrocket'
-          buttonText='Register'}}
+          buttonText='Register'
+          buttonDisabled=validations.messages.length}}
   <div class="row">
     {{x-input classNames='col s12'
+              value=model.email
+              errors=vaildations.attrs.model.email.messages
               type='email'
               label='Username'}}
   </div>
   <div class="row">
     {{x-input classNames='col s12'
+              value=model.password
+              errors=validations.attrs.model.password.messages
               type='password'
               label='Password'}}
   </div>
   <div class="row">
     {{x-input classNames='col s12'
+              value=model.passwordConfirmation
+              errors=validations.attrs.model.passwordConfirmation.messages
               type='password'
               label='Confirm Password'}}
   </div>
