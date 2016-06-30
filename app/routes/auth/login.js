@@ -1,10 +1,13 @@
 import Ember from 'ember';
 
 const {
-  Route
+  Route,
+  inject
 } = Ember;
 
 export default Route.extend({
+  session: inject.service(),
+
   model() {
     return {
       email: '',
@@ -14,7 +17,10 @@ export default Route.extend({
 
   actions: {
     doLogin() {
-      alert('login attempted');
+      const user = this.get('currentModel');
+      this.get('session').authenticate('authenticator:chatrocket',
+                                       user.email,
+                                       user.password);
     }
   }
 });
