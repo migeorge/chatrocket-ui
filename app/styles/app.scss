@@ -1,0 +1,9 @@
+// Fix for Roboto font path
+$roboto-font-path: '../assets/';
+
+// Materialize styles
+@import "bower_components/materialize/sass/materialize";
+
+body {
+  background-color: color('grey', 'darken-3');
+}
