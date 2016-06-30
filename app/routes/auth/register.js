@@ -5,6 +5,10 @@ const {
 } = Ember;
 
 export default Route.extend({
+  model() {
+    return this.store.createRecord('user');
+  },
+
   actions: {
     doRegister() {
       alert('registrtation attempted');
