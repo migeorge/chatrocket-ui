@@ -11,7 +11,9 @@ export default Route.extend({
 
   actions: {
     doRegister() {
-      alert('registrtation attempted');
+      this.get('currentModel').save().then(() => {
+        this.transitionTo('auth.login');
+      });
     }
   }
 });
